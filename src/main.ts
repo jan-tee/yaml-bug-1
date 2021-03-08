@@ -16,21 +16,21 @@ const data_in = {
 };
 
 function testYaml() {
-    const s = yaml.stringify(data_in, {});
-    console.log("Generated YAML with 'yaml':");
-    console.log(s);
-    yaml.parse(s);
-}   
-
-function testJsYaml() {
-    const s = jsyaml.dump(data_in, {});
-    console.log("Generated YAML with 'js-yaml':");
-    console.log(s);
-    jsyaml.load(s);
-    yaml.parse(s);
+  const s = yaml.stringify(data_in, {});
+  console.log("Generated YAML with 'yaml':");
+  console.log(s);
+  yaml.parse(s);
 }
 
-testJsYaml()
-testYaml()
+function testJsYaml() {
+  const s = jsyaml.dump(data_in, {});
+  console.log("Generated YAML with 'js-yaml':");
+  console.log(s);
+  jsyaml.load(s);
+  yaml.parse(s);
+}
+
+testJsYaml();
+testYaml();
 
 // const f = fs.readFileSync("test.yaml", "utf8");
